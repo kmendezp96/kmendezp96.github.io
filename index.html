@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="My awesome description">
-<meta name="author" content="Diego Alejandro Guevara Rocha">
+<meta name="author" content="Diego Guevera y Kevin Mendez">
 <meta name="generator" content="Hugo 0.27.1" />
-<title>Diego Guevara</title>
+<title>Ejecución de efecto borroso usando POSIX, OpenMP y CUDA</title>
 <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
 <link href="https://kmendezp96.github.io/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom CSS -->
@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Diego Guevara</a>
+            <a class="navbar-brand" href="#page-top">Ejecución de efecto borroso usando POSIX, OpenMP y CUDA</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -47,13 +47,16 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#portfolio">Proyectos</a>
+                    <a href="#introduccion">Introducción</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#about">Información</a>
+                    <a href="#posix">Hilos POSIX</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#contact">Contáctame</a>
+                    <a href="#openmp">OpenMP</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#cuda">CUDA</a>
                 </li>
             </ul>
         </div>
@@ -79,16 +82,83 @@
     </div>
 </header>
 
-        <!-- Portfolio Grid Section -->
+
+
+
+<section id="introduccion">
+<div class="container">
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h2>Introducción</h2>
+        <hr class="star-primary">
+    </div>
+</div>
+<div class="row">
+  <div>
+      <p>El fin de esta pagina es hacer una breve descripción de los elementos que se usaron para aplicar el efecto borroso
+      en una imagen, el porque se utilizaron y como utilizarlos. Los efectos borrosos se aplicaron promediando los colores
+    de los pixeles con sus vecinos en forma de cruz, lo cual se evidencia en la siguiente imagen: </p>
+  </div>
+    meter la de los tigres pero me da pereza buscarla y estoy en windows
+    <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+            <div class="caption">
+                <div class="caption-content">
+                    <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img src="img/portfolio/stapel.png" class="img-responsive">
+        </a>
+    </div>
+    <div>
+        <p>La biblioteca OpenCV se utilizo en las 3 distintas implementaciones, la cual facilito el procesamiento de las
+        imagenes.</p>
+    </div>
+    <div>
+        <p>Se hizo uso de estas distintas herramientas con el fin de distribuir el procesamiento de la imagen
+        entre multiples hilos para asi aprovechar mejor el hardware disponible, optimizar los tiempos de procesamiento ademas
+        de determinar en que contextos implementar hilos POSIX, la api OpenMP o usar CUDA resulta mas beneficioso.</p>
+    </div>
+    <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+            <div class="caption">
+                <div class="caption-content">
+                    <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img src="img/portfolio/wikiturismo.png" class="img-responsive">
+        </a>
+    </div>
+
+    <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+            <div class="caption">
+                <div class="caption-content">
+                    <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img src="img/portfolio/UWALLET.JPG" class="img-responsive">
+        </a>
+    </div>
+
+</div>
+</div>
+</section>
+
+
 <section id="portfolio">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>PROYECTOS</h2>
+                <h2>Hilos POSIX</h2>
                 <hr class="star-primary">
             </div>
         </div>
         <div class="row">
+          <div>
+              <p>Mediante el uso de la biblioteca pthread se gestiona el manejo de multiples hilos corriendo sobre
+              un sistema operativo que siga el estándar POSIX</p>
+          </div>
 
             <div class="col-sm-4 portfolio-item">
                 <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
