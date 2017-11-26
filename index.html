@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Ejecución de efecto borroso usando POSIX, OpenMP y CUDA</a>
+            <a class="navbar-brand" href="#page-top">Efecto borroso usando POSIX, OpenMP y CUDA</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -96,50 +96,79 @@
 <div class="row">
   <div>
       <p>El fin de esta pagina es hacer una breve descripción de los elementos que se usaron para aplicar el efecto borroso
-      en una imagen, el porque se utilizaron y como utilizarlos. Los efectos borrosos se aplicaron promediando los colores
-    de los pixeles con sus vecinos en forma de cruz, lo cual se evidencia en la siguiente imagen: </p>
+      en una imagen, el porque se utilizaron y como utilizarlos. </p>
+      <div class="col-sm-4 portfolio-item">
+          <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+              <div class="caption">
+                  <div class="caption-content">
+                      <i class="fa fa-search-plus fa-3x"></i>
+                  </div>
+              </div>
+              <img src="img/portfolio/1080.jpg" class="img-responsive">
+          </a>
+      </div>
+      <div class="col-sm-4 portfolio-item" style="margin-right: 10cm">
+          <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+              <div class="caption">
+                  <div class="caption-content">
+                      <i class="fa fa-search-plus fa-3x"></i>
+                  </div>
+              </div>
+              <img src="img/portfolio/edicion.jpg" class="img-responsive">
+          </a>
+      </div>
   </div>
-    meter la de los tigres pero me da pereza buscarla y estoy en windows
-    <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-                <div class="caption-content">
-                    <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-            </div>
-            <img src="img/portfolio/stapel.png" class="img-responsive">
-        </a>
-    </div>
+  <br>
+
     <div>
         <p>La biblioteca OpenCV se utilizo en las 3 distintas implementaciones, la cual facilito el procesamiento de las
-        imagenes.</p>
+        imagenes, los efectos borrosos se aplicaron promediando los colores
+      de los pixeles con sus vecinos en forma de cruz, lo cual se evidencia en la siguiente imagen:</p>
+      <div class="col-sm-4 portfolio-item"  style="margin-right: 20cm">
+          <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+              <div class="caption">
+                  <div class="caption-content">
+                      <i class="fa fa-search-plus fa-3x"></i>
+                  </div>
+              </div>
+              <img src="img/portfolio/efecto.png" class="img-responsive">
+          </a>
+      </div>
     </div>
     <div>
         <p>Se hizo uso de estas distintas herramientas con el fin de distribuir el procesamiento de la imagen
         entre multiples hilos para asi aprovechar mejor el hardware disponible, optimizar los tiempos de procesamiento ademas
         de determinar en que contextos implementar hilos POSIX, la api OpenMP o usar CUDA resulta mas beneficioso.</p>
-    </div>
-    <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-                <div class="caption-content">
-                    <i class="fa fa-search-plus fa-3x"></i>
+        <div class="col-sm-4 portfolio-item" >
+            <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                <div class="caption">
+                    <div class="caption-content">
+                        <i class="fa fa-search-plus fa-3x"></i>
+                    </div>
                 </div>
-            </div>
-            <img src="img/portfolio/wikiturismo.png" class="img-responsive">
-        </a>
-    </div>
-
-    <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-                <div class="caption-content">
-                    <i class="fa fa-search-plus fa-3x"></i>
+                <img src="img/portfolio/posix.png" class="img-responsive">
+            </a>
+        </div>
+        <div class="col-sm-4 portfolio-item" >
+            <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                <div class="caption">
+                    <div class="caption-content">
+                        <i class="fa fa-search-plus fa-3x"></i>
+                    </div>
                 </div>
-            </div>
-            <img src="img/portfolio/UWALLET.JPG" class="img-responsive">
-        </a>
-    </div>
+                <img src="img/portfolio/openmp.png" class="img-responsive">
+            </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+            <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                <div class="caption">
+                    <div class="caption-content">
+                        <i class="fa fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="img/portfolio/cuda.jpg" class="img-responsive">
+            </a>
+        </div>
 
 </div>
 </div>
