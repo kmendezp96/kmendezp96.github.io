@@ -85,7 +85,7 @@
 <div class="row">
   <div>
       <p>El fin de esta página es hacer una breve descripción de los elementos que se usaron para aplicar el efecto borroso
-      en una imagen, el porqué se utilizaron y como utilizarlos.</p>
+      en una imagen, el porqué y el cómo se utilizaron.</p>
       <div class="col-sm-4 portfolio-item">
           <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
               <div class="caption">
@@ -112,17 +112,17 @@
       <div>
         <div>
           <br>
-        <p>La biblioteca OpenCV se utilizó en las 3 distintas implementaciones, la cual facilito el procesamiento de las
+        <p>La biblioteca OpenCV se utilizó en las 3 distintas implementaciones, la cual facilitó el procesamiento de las
         imágenes, los efectos borrosos se aplicaron promediando los colores
-      de los pixeles con sus vecinos en forma de cruz, en este ejemplo se toma un tamaño de efecto de 3, el pixel de la mitad
-      adquiere el color promedio de color de los 3 pixeles a la derecha, izquierda, arriba y abajo:</p>
+      de los píxeles con sus vecinos en forma de cruz, en este ejemplo se toma un tamaño de efecto de 3, el pixel de la mitad
+      adquiere el color promedio de color de los 3 píxeles a la derecha, izquierda, arriba y abajo:</p>
     </div>
       <div style="width:50%; height: 50%">
               <img src="img/portfolio/efecto_cruz.png" class="img-responsive">
       </div>
       <div>
         <br>
-       <p>el número de pixeles que toma para el efecto es variable, con un tamaño de 30 se alcanza a apreciar
+       <p>El número de píxeles que toma para el efecto es variable, con un tamaño de 30 se alcanza a apreciar
        la forma que adquiere el efecto debido a su forma de cruz:</p>
      </div>
       <div  style="width:50%; height: 50%">
@@ -133,8 +133,8 @@
       <br>
         <p>Se hizo uso de estas distintas herramientas con el fin de distribuir el procesamiento de la imagen
         entre múltiples hilos para así aprovechar mejor el hardware disponible, optimizar los tiempos de procesamiento, además
-        de determinar en qué contextos implementar hilos POSIX, el api OpenMP o usar CUDA resulta más beneficioso, estas
-        distintas implementaciones se pueden descargar desde el repositorio: </p>
+        de determinar en qué contextos implementar hilos POSIX, el api OpenMP o CUDA resulta más beneficioso, estas
+        distintas implementaciones se pueden descargar desde el repositorio. </p>
         <div class="col-sm-4 portfolio-item">
                 <img src="img/portfolio/posix.png" class="img-responsive">
         </div>
@@ -168,7 +168,7 @@
           Librería OpenCV.
       </li>
       <li>
-          Grafica NVIDIA.
+          Gráfica NVIDIA.
       </li>
       <li>
           Tener instalado CUDA.
@@ -191,9 +191,9 @@
         <div class="row">
           <div>
               <p>Mediante el uso de la biblioteca pthread se gestiona el manejo de múltiples hilos corriendo sobre
-              un sistema operativo que siga el estándar POSIX. Esta implementación recibe como parámetro el numero de
+              un sistema operativo que siga el estándar POSIX. Esta implementación recibe como parámetro el número de
               hilos con los que se desea correr la aplicación y el kernel del efecto. A cada hilo se le asignará una parte
-              de igual tamaño de la imagen, en este caso se balancea por filas de pixeles, dividiendo el total de filas en el
+              de igual tamaño de la imagen, en este caso se balancea por filas de píxeles, dividiendo el total de filas en el
               numero de hilos, en la siguiente imagen se corre el programa con 4 hilos, deteniendo el ultimo hilo, por lo que
               su parte de la imagen queda sin el efecto borroso:</p>
           </div>
@@ -210,9 +210,9 @@
           <div>
               <p>Para ejecutar el programa entrar a la carpeta “blur_posix”, editar el archivo “blur_posix.sh” de la siguiente manera:</p>
               <p>tam_kernel= #tamaño del kernel que desee.</p>
-              <p>n_hilos= #numero de hilos con los que lanzara el programa.</p>
+              <p>n_hilos= #número de hilos con los que lanzara el programa.</p>
               <p>Imagen= #nombre y extensión de la imagen a la que se desea aplicar el efecto.</p>
-              <p>Posteriormente guardarlo, y ejecutarlo usando el comando: sudo bash ./blur_posix.sh</p>
+              <p>Posteriormente guardarlo, y ejecutarlo usando el comando: ./blur_posix.sh</p>
               <p>Ejemplo: En este ejemplo se ejecuta con un tamaño de efecto de 40, 11 hilos sobre la una imagen llamada “4k.jpg”.</p>
           </div>
           <div class="col-sm-4 portfolio-item" style="float:none">
@@ -242,11 +242,11 @@
         </div>
         <div>
             <p>OpenMP es una API que nos facilita el desarrollo de programas que utilicen un paradigma de programación paralela.
-              En este caso el balanceo se hace a nivel de pixeles que no necesariamente se encuentran en la misma fila,
-              cada hilo se le asignara un número igual de pixeles, se ejecuta
-              de forma parecida a la implementación que hace uso de POSIX, esta vez se editara el archivo “blur_openmp.sh” que se
-              encuentra dentro de la carpeta “blur_openmp”, guardarlo y posteriormente con la terminal de comandos ejecutar el
-              archivo anteriormente editad con el comando: sudo bash ./blur_openmp.sh.</p>
+              En este caso el balanceo se hace a nivel de píxeles que no necesariamente se encuentran en la misma fila,
+              a cada hilo se le asignará un número igual de píxeles, se ejecuta
+              de forma parecida a la implementación que hace uso de POSIX, esta vez se editará el archivo “blur_openmp.sh”, que se
+              encuentra dentro de la carpeta “blur_openmp”, posteriormente se guardará para en el terminal de comandos ser ejecutado
+              con el comando: ./blur_openmp.sh.</p>
               <p>Ejemplo:</p>
         </div>
         <div class="col-sm-4 portfolio-item" style="float:none">
@@ -278,21 +278,21 @@
             <p>(Arquitectura Unificada de Dispositivos de Cómputo) es una plataforma para desarrollo de computación
             en paralelo utilizada para poder codificar y ejecutar algoritmos que corran en GPU, haciendo transferencia
             de datos entre la memoria disponible para el CPU y la de la GPU. Esto añade una ventaja adicional en ciertos
-            contextos en los que un algoritmo es altamente paralelizable, ya que el numero de unidades de procesamiento
-            disponibles en una GPU es mayor de las que se podrían encontrar en los CPU’s. Para la implementación del efecto
+            contextos en los que un algoritmo es altamente paralelizable, ya que el número de unidades de procesamiento
+            disponibles en una GPU es mayor de las que se podrían encontrar en las CPU’s. Para la implementación del efecto
             borroso en CUDA, se optó por recorrer la imagen fila por fila, los valores rgb de cada fila son enviados a la GPU,
             la GPU recorre pixel por pixel para asignarle su nuevo valor, el cual se obtiene a partir del promedio de los
-            pixeles desde n a la izquierda hasta n a la derecha del pixel actual, siendo n el tamaño del kernel dado por
+            píxeles desde n a la izquierda hasta n a la derecha del pixel actual, siendo n el tamaño del kernel dado por
             el usuario.  Al completar esto se recorre la imagen columna por columna, enviando ahora la información de
-            la columna a la GPU y asignando el valor al pixel a partir del promedio de n pixeles hacia arriba hasta n
-            pixeles hacia abajo del pixel a modificar. Al completar esto se promedian los valores obtenidos al recorrer
+            la columna a la GPU y asignando el valor al pixel a partir del promedio de n píxeles hacia arriba hasta n
+            píxeles hacia abajo del pixel a modificar. Al completar esto se promedian los valores obtenidos al recorrer
             filas con los valores obtenidos al recorrer columnas, y con estos valores generamos la nueva imagen que
             posteriormente se guarda con el nombre edicion.jpg.</p>
             <p>Para ejecutar la implementación en cuda: entrar a la carpeta “blur_cuda”, editar el archivo “blur_cuda.sh”
               de igual forma que las dos anteriores implementaciones, solo que en este caso se incluye el número de bloques
               a lanzar en la GPU y el número de hilos representa la cantidad de hilos por bloque, luego de editarlo y guardarlo,
-               correrlo en la terminal mediante el comando:  sudo bash ./blur_cuda.sh </p>
-               <p>En este ejemplo se edito el archivo para que tuviera un efecto de 40 pixeles, con 11 bloques, y 11 hilos por bloque,
+               correrlo en la terminal mediante el comando: ./blur_cuda.sh </p>
+               <p>En este ejemplo se editó el archivo para que tuviera un efecto de 40 píxeles, con 11 bloques, y 11 hilos por bloque,
                  editando la imagen "1080.jpg"</p>
         </div>
         <div class="col-sm-4 portfolio-item" style="float:none">
